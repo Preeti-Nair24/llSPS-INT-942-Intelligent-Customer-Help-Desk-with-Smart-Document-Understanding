@@ -16,13 +16,13 @@ function [magneticFieldData, coilPositions] = importMaxwellData(filepath)
 %   coilPositions - [6 x 3] array of coil center positions
 %
 % Example:
-%   [data, coils] = importMaxwellData('maxwell_polywell_data.csv');
+%   [data, coils] = importMaxwellData('merge-csv.csv');
 
-    fprintf('Importing ANSYS Maxwell data from: %s\n', filepath);
+    fprintf('Importing ANSYS Maxwell data from:Polywell_RL_data', filepath);
 
     % Check if file exists
-    if ~exist(filepath, 'file')
-        error('File not found: %s', filepath);
+    if ~exist(filepath 'merge-csv')
+        error('File not found: Polywell_RL_data', filepath);
     end
 
     % Determine file type and import accordingly
@@ -66,7 +66,7 @@ function [magneticFieldData, coilPositions] = importMaxwellData(filepath)
 
     % Define polywell coil positions (cubic arrangement)
     % Coils are positioned at faces of a cube with side length L
-    L = 0.5; % meters (adjust based on your geometry)
+    L = 1; % meters (adjust based on your geometry)
     coilPositions = [
         L,  0,  0;  % +X face
        -L,  0,  0;  % -X face
